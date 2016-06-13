@@ -64,6 +64,7 @@ bool GrafoMatriz::completo(){
     return true;
 }
 
+
 bool GrafoMatriz::kregular(){
     int grauInicial = 0, grauComparado;
     for(int i = 0; i < verticeCont; i++){
@@ -123,6 +124,19 @@ int GrafoMatriz::k_regular(){
     }
     else{
         return -1;
+    }
+}
+
+void GrafoMatriz::complemento(const GrafoMatriz G){
+    for(int i = 0; i < verticeCont; i++){
+        for(int j = 0; j < verticeCont; j++){
+            if(G.MatrizAdj[i][j] ){// . existeAresta(i,j)){ // ISSO DAQUI NÃO DEVERIA FUNCIONAR MAS SÓ TÁ COMPILANDO ASSIM, TEM Q TESTAR
+                MatrizAdj[i][j] = false;
+            }
+            else{
+                MatrizAdj[i][j] = true;
+            }
+        }
     }
 }
 
