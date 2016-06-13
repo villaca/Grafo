@@ -6,7 +6,7 @@ bool lista::vazia(){
 }
 
 void lista::insere(const int& novo){
-  elo *p;  
+  elo *p;
   p = new elo(novo);
   p->prox=prim;
   prim = p;
@@ -15,11 +15,11 @@ void lista::insere(const int& novo){
 
 
 bool lista::remove(const int& elem){
-  elo *p, *ant; 
-  
+  elo *p, *ant;
+
   for(p=prim; ((p!=NULL) && (p->dado!=elem)); p=p->prox)
     ant=p;
-  
+
   if (p==NULL) return false;
   if (p==prim) prim=prim->prox;
   else ant->prox=p->prox;
@@ -45,26 +45,26 @@ void lista::imprime() const {
     cout << p->dado;
   if (p -> prox)  cout << " , " ;
   }
-}  
+}
 
 
 lista::~lista(){
- elo *p=prim;
- while(prim!=NULL) {
- p=prim->prox;
- delete prim;
-prim=p;
- }
+    elo *p=prim;
+    while(prim!=NULL) {
+        p=prim->prox;
+        delete prim;
+        prim=p;
+    }
 }
 
 
 bool lista::busca(int elem){
-  elo *p; 
+  elo *p;
   int i;
-  if (! vazia()){        
+  if (! vazia()){
     for(i = 1, p = prim; (p!=NULL); i++, p=p->prox){
       if (p->dado == elem)
-        return true;      
+        return true;
     }
     return false;
   }

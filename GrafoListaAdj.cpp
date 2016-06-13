@@ -7,29 +7,30 @@ GrafoListaAdj::GrafoListaAdj(int Nvertices) {
 	}
 }
 void GrafoListaAdj::removeAresta(int i, int j){
-	if(i<verticeNum && j<verticeNum){
-		
+	if(existeAresta(i,j)){
+		vizinhos[i].remove(j);
+		vizinhos[j].remove(i);
 	}
 }
 
 bool GrafoListaAdj::existeAresta(int i, int j){
 	if(i<verticeNum && j<verticeNum){
-		if(vizinhos[i] != )
+		return vizinhos[i].busca(j);
 	}
 	else
 		return false;
 }
 
 void GrafoListaAdj::imprimeGrafo(){
-	
+
 }
 
 void GrafoListaAdj::adAresta(int i, int j){
-	if (i<verticeNum && j<verticeNum && !existeAresta){
+	if (i<verticeNum && j<verticeNum && !existeAresta(i,j)){
 		vizinhos[ i ].insere( j );
  		vizinhos[ j ].insere( i );
 	}
-} 
+}
 
 GrafoListaAdj::~GrafoListaAdj(){
 	delete [] vizinhos;
