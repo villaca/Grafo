@@ -31,24 +31,24 @@ void GrafoMatriz::imprimeGrafo(){
 	for(int i=0; i<verticeCont; i++){
 		for(int j = 0; j<verticeCont; j++){
 			if(existeAresta(i,j))
-				cout <<"Vertice: "<< i <<" Vertice: "<< j<< " Possui aresta.\n" ;			
+				cout <<"Vertice: "<< i <<" Vertice: "<< j<< " Possui aresta.\n" ;
 			else
-				cout <<"Vertice: "<< i <<" Vertice: "<< j<< " Nao possui aresta.\n" ;				
-			
+				cout <<"Vertice: "<< i <<" Vertice: "<< j<< " Nao possui aresta.\n" ;
+
 		}
 	}
 }
 
-void GrafoMatriz::imprimeMatrizGrafo(){	
+void GrafoMatriz::imprimeMatrizGrafo(){
 	for(int i=0; i<verticeCont; i++){
-		cout << i << "|";		
-		for(int j = 0; j<verticeCont; j++){			
-			cout <<" "<< existeAresta(i,j);				
-			
+		cout << i << "|";
+		for(int j = 0; j<verticeCont; j++){
+			cout <<" "<< existeAresta(i,j);
+
 		}
 		cout << "\n";
 	}
-	
+
 
 }
 
@@ -147,7 +147,7 @@ int GrafoMatriz::k_regular(){
 void GrafoMatriz::complemento(const GrafoMatriz G){
     for(int i = 0; i < verticeCont; i++){
         for(int j = 0; j < verticeCont; j++){
-            if(G.MatrizAdj[i][j] ){// . existeAresta(i,j)){ // ISSO DAQUI NÃO DEVERIA FUNCIONAR MAS SÓ TÁ COMPILANDO ASSIM, TEM Q TESTAR
+            if(G.MatrizAdj[i][j] ){
                 MatrizAdj[i][j] = false;
             }
             else{
